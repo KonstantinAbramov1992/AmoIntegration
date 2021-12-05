@@ -1,0 +1,5 @@
+<select class="chat_app-select-in-salesbot" name="license" id="chat-app__licenses-id{{ widgetId }}">
+    {% for license in licenses %}
+        <option value="{{ license.licenseId }}">{{ license.licenseId }} - {{ license.licenseName }}</option>
+    {% endfor %}
+</select>

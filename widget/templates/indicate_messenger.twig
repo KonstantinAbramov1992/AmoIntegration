@@ -1,0 +1,20 @@
+<div class="indicators_container">
+    <div class="indicators">
+        {% if e.messenger == "telegram" %}
+            {% if e.isExist == true %}
+                <img src="{{ path }}/images/telegram_indicator_on.png">
+            {% else %}
+                <img src="{{ path }}/images/telegram_indicator_off.png">
+            {% endif %}
+        {% endif %}
+    </div>
+    <div class="indicators">
+        {% if e.messenger == "grayWhatsApp" %}
+            {% if e.isExist == true %}
+                <img src="{{ path }}/images/whatsapp_indicator_on.png">
+            {% else %}
+                <img src="{{ path }}/images/whatsapp_indicator_off.png">
+            {% endif %}
+        {% endif %}
+    </div>
+</div>

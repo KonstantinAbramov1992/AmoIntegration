@@ -1,0 +1,6 @@
+<select id="chat_app_templates_waba_salesbot{{ widgetId }}" class="chat_app-select-in-salesbot" name="template_waba">
+    <option value="" selected disabled hidden>{{ langs.info.select_template }}</option>
+    {% for v in templates %}
+        <option value="{{ v.id }}">{{ v.option }}</option>
+    {% endfor %}
+</select>

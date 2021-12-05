@@ -1,0 +1,238 @@
+{
+  "widget": {
+    "name": "widget.name",
+    "description": "widget.description",
+    "short_description": "widget.short_description",
+    "version": "2",
+    "interface_version": 2,
+    "init_once": false,
+    "locale": [
+      "ru"
+    ],
+    "installation": true,
+    "support": {
+      "link": "https://fce7-109-252-65-125.ngrok.io/view/support",
+      "email": "abramovk_a@mail.ru"
+    }
+  },
+  "locations": [
+    "ccard",
+    "ccard-0",
+    "ccard-1",
+    "llist-0",
+    "llist-1",
+    "comcard-1",
+    "clist-0",
+    "clist-1",
+    "lcard",
+    "lcard-0",
+    "lcard-1",
+    "comcard-0",
+    "card_sdk",
+    "settings",
+    "digital_pipeline",
+    "advanced_settings",
+    "salesbot_designer",
+    "widget_page",
+    "lead_sources",
+    "whatsapp_modal",
+    "catalogs",
+    "everywhere"
+  ],
+  "left_menu": {
+    "realty_widget_code": {
+      "title": "widget.btn_name",
+      "icon": "images/btn_image.svg",
+      "sort": {
+        "after": "leads"
+      },
+      "submenu": {
+        "sub_item_code_1": {
+          "title": "widget.btn_title_1",
+          "sort": 1
+        },
+        "sub_item_code_2": {
+          "title": "widget.btn_title_2",
+          "sort": 2
+        }
+      }
+    }
+  },
+  "tour": {
+    "is_tour": true,
+    "tour_images": {
+      "ru": [
+        "/images/logo_main.png",
+        "/images/logo_main.png",
+        "/images/logo_main.png"
+      ]
+    },
+    "tour_description": "widget.tour_description"
+  },
+  "settings": {
+    "login": {
+      "name": "settings.login",
+      "type": "text",
+      "required": false
+    }
+  },
+  "dp": {
+    "settings": {
+      "chats_app_license": {
+        "name": "salesbot.license",
+        "type": "text",
+        "required": false
+      },
+      "chats_app_messenger": {
+        "name": "salesbot.messenger",
+        "type": "text",
+        "required": false
+      },
+      "chats_app_template": {
+        "name": "dp.message",
+        "type": "text",
+        "required": false
+      },
+      "chats_app_amojo_id": {
+        "name": "dp.message",
+        "type": "text",
+        "required": false
+      },
+      "chats_app_waba_template": {
+        "name": "dp.message",
+        "type": "text",
+        "required": false
+      },
+      "chats_app_waba_param1": {
+        "name": "dp.message",
+        "type": "text",
+        "required": false
+      },
+      "chats_app_waba_param2": {
+        "name": "dp.message",
+        "type": "text",
+        "required": false
+      },
+      "chats_app_waba_param3": {
+        "name": "dp.message",
+        "type": "text",
+        "required": false
+      },
+      "chats_app_waba_param4": {
+        "name": "dp.message",
+        "type": "text",
+        "required": false
+      }
+    },
+    "action_multiple": false,
+    "webhook_url": "https://amo.chatapp.online/api/dp/webhooks"
+  },
+  "advanced": {
+    "title": "advanced.title"
+  },
+  "salesbot_designer": {
+    "logo": "/upl/chats_app/1/widget/images/logo_min.png",
+    "set_template_chat": {
+      "name": "salesbot.one",
+      "settings": {
+        "license": {
+          "name": "salesbot.license",
+          "type": "text",
+          "default_value": "",
+          "manual": false
+        },
+        "messenger": {
+          "name": "salesbot.messenger",
+          "type": "text",
+          "default_value": "",
+          "manual": true
+        },
+        "template": {
+          "name": "salesbot.template",
+          "type": "text",
+          "default_value": " ",
+          "manual": true
+        },
+        "param_one": {
+          "name": "salesbot.param_one",
+          "type": "numeric"
+        },
+        "param_two": {
+          "name": "salesbot.param_two",
+          "type": "numeric"
+        },
+        "param_three": {
+          "name": "salesbot.param_three",
+          "type": "numeric"
+        },
+        "param_four": {
+          "name": "salesbot.param_four",
+          "type": "numeric"
+        },
+        "param_five": {
+          "name": "salesbot.param_five",
+          "type": "numeric"
+        },
+        "param_six": {
+          "name": "salesbot.param_six",
+          "type": "numeric"
+        },
+        "param_seven": {
+          "name": "salesbot.param_seven",
+          "type": "numeric"
+        }
+      }
+    },
+    "set_template_waba": {
+      "name": "salesbot.two",
+      "settings": {
+        "license": {
+          "name": "salesbot.license",
+          "type": "text",
+          "default_value": "",
+          "manual": false
+        },
+        "messenger": {
+          "name": "salesbot.messenger",
+          "type": "text",
+          "default_value": "",
+          "manual": true
+        },
+        "template_waba": {
+          "name": "salesbot.template_waba",
+          "type": "text",
+          "default_value": "",
+          "manual": true
+        },
+        "param_one": {
+          "name": "salesbot.param_one",
+          "type": "text"
+        },
+        "param_two": {
+          "name": "salesbot.param_two",
+          "type": "text"
+        },
+        "param_three": {
+          "name": "salesbot.param_three",
+          "type": "text"
+        },
+        "param_four": {
+          "name": "salesbot.param_four",
+          "type": "text"
+        },
+        "param_five": {
+          "name": "salesbot.param_five",
+          "type": "text"
+        },
+        "param_six": {
+          "name": "salesbot.param_six",
+          "type": "text"
+        },
+        "param_seven": {
+          "name": "salesbot.param_seven",
+          "type": "text"
+        }
+      }
+    }
+  }
+}

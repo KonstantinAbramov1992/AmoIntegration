@@ -1,0 +1,47 @@
+<div>
+    <h1 class="chat_app-licence-title">{{ langs.info.select_license_message }}</h1>
+
+    <form action="">
+        <div class="vl-meet-list">
+            <p class="chat_app-selectLabel">{{ langs.info.choose_license }}</p>
+            <select class="chat_app-select-form" name="licenseId" id="chat-app__license-id">
+                {% for license in licenses %}
+                    <option value="{{ license.licenseId }}">{{ license.licenseId }} - {{ license.licenseName }}</option>
+                {% endfor %}
+            </select>
+
+            <p class="chat_app-selectLabel">{{ langs.info.choose_messenger }}</p>
+
+            <select class="chat_app-select-form chat_app-mb-20" name="messengerType" id="chat-app__messenger-type">
+                {% for messenger in licenses[0].messenger %}
+                    <option value="{{ messenger.type }}">{{ messenger.type }}</option>
+                {% endfor %}
+            </select>
+
+            <select class="chat_app-select-form chat_app-mb-20" name="phone" id="chat-app__phone">
+                {% for key,contact in phonesCollection %}
+                    <option value="{{ contact.phone }}"
+                            data-name="{{ contact.name }}"
+                            data-id="{{ contact.id }}"
+                            data-responsible="{{ contact.responsible }}"
+                            data-entity="{{ contact.entity }}"
+                    >{{ contact.phone }}</option>
+                {% endfor %}
+            </select>
+
+            {% if currentEntity == 'contacts' and isEmptyChats == true %}
+                {{ include_control('textarea', {
+                    id: 'chat_app_message_input_item',
+                    class_name: 'chat_app_message_input_item',
+                    name: 'chat_app_message_input',
+                    placeholder: langs.info.enter_message,
+                    style: {
+                        'width': '100%',
+                        'margin-bottom': '20px',
+                    },
+                }) }}
+            {% endif %}
+        </div>
+        {{ btnSave }}
+    </form>
+</div>

@@ -1,0 +1,7 @@
+<select id="chat_app_templates_search_item" class="chat_app_templates_search_item" name="chat_app_templates_search">
+    <option value="" selected disabled hidden>{{ langs.info.select_template }}</option>
+    {% for v in templates %}
+        <option value="{{ v.id }}">{{ v.option }}</option>
+    {% endfor %}
+</select>
+

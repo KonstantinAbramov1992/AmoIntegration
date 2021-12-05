@@ -1,0 +1,5 @@
+<select class="chat_app-select-in-salesbot" name="messenger" id="chat-app__messengers-type{{ widgetId }}">
+    {% for messenger in messengers %}
+        <option value="{{ messenger.type }}">{{ messenger.type }}</option>
+    {% endfor %}
+</select>
