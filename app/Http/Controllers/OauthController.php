@@ -62,7 +62,6 @@ class OauthController extends Controller
 
     public function uninstall (Request $request) {
         $accountId = $request->query->get('account_id');
-        file_put_contents('amoId.txt', json_encode($this->accountManager->getStoredAmojoId($accountId)));
         $amojoId = $this->accountManager->getStoredAmojoId($accountId)[0]->amojo_id;
         $this->accountManager->disconnectChannelFromAccount($amojoId);
         $this->accountManager->deleteAccount($accountId);
