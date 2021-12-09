@@ -1,12 +1,9 @@
 <?php
 declare(strict_types=1);
 
-
 namespace App\AmoCrm;
 
-
 use AmoCRM\Client\AmoCRMApiClient;
-use Illuminate\Support\Facades\Log;
 use League\OAuth2\Client\Token\AccessTokenInterface;
 
 class AmoCrmClientFactory

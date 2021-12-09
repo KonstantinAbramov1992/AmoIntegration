@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use AmoCRM\Models\AccountModel;
 use App\AmoCrm\AmoCrmClientFactory;
+use App\AmoCrm\Service\AmoCrmTokenManager;
+use App\AmoCrm\Service\AmoCrmAccountManager;
 
 class OauthController extends Controller
 {
@@ -13,11 +14,25 @@ class OauthController extends Controller
     */
     protected AmoCrmClientFactory $clientFactory;
 
+    /**
+    * @var AmoCrmTokenManager
+    */
+    protected AmoCrmTokenManager $tokenManager;
+
+    /**
+    * @var AmoCrmAccountManager
+    */
+    protected AmoCrmAccountManager $accountManager;
+
     public function __construct(
-        AmoCrmClientFactory $clientFactory
+        AmoCrmClientFactory $clientFactory,
+        AmoCrmTokenManager $tokenManager,
+        AmoCrmAccountManager $accountManager
     )
     {
         $this->clientFactory = $clientFactory;
+        $this->tokenManager = $tokenManager;
+        $this->accountManager = $accountManager;
     }
 
     public function install (Request $request)
@@ -30,12 +45,23 @@ class OauthController extends Controller
         $accessToken = $client->getOAuthClient()->getAccessTokenByCode($code);
 
         $client->setAccessToken($accessToken);
-        $account = $client->account()->getCurrent([
-            AccountModel::DATETIME_SETTINGS,
-        ]);
-        //Здесь закончил
-        $this->updateCache($account->getId(), $accessToken->getToken());
 
-        return $code;
+        $account = $client->account()->getCurrent([
+            'amojo_id',
+        ]);
+
+        $accountId = $account->getId();
+        $accountSubdomain = $account->getSubdomain();
+        $amojoId = $account->getAmojoId();
+
+        $this->tokenManager->updateCache($accountId, $accessToken->getToken());
+        $this->tokenManager->saveRefreshToken($accountId, $accountSubdomain, $amojoId, $accessToken->getRefreshToken());
+
+        return 'ok';
+    }
+
+    public function uninstall (Request $request) {
+        $accountId = $request->query->get('account_id');
+        $this->accountManager->deleteAccount($accountId);
     }
 }

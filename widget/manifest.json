@@ -3,7 +3,7 @@
     "name": "widget.name",
     "description": "widget.description",
     "short_description": "widget.short_description",
-    "version": "2",
+    "version": "3",
     "interface_version": 2,
     "init_once": false,
     "locale": [
@@ -11,7 +11,7 @@
     ],
     "installation": true,
     "support": {
-      "link": "https://fce7-109-252-65-125.ngrok.io/view/support",
+      "link": "https://4984-109-252-65-125.ngrok.io/view/support",
       "email": "abramovk_a@mail.ru"
     }
   },

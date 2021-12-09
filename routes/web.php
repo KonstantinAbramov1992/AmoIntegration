@@ -20,4 +20,5 @@ Route::get('/', function () {
 
 Route::prefix('/widget/')->group(function () {
     Route::get('oauth', [OauthController::class, 'install']);
+    Route::get('off', [OauthController::class, 'uninstall']);
 });
